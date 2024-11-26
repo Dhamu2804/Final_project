@@ -1,0 +1,101 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* Full-screen background image */
+body {
+    background-image: url('background1.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center content vertically */
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+/* Main content */
+.index-container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full screen */
+}
+
+/* Heading styles */
+h1.main-title {
+    font-size: 4.5em;
+    color: #000000; /* Dark black color */
+    margin-bottom: 20px; /* Space below h1 */
+}
+
+h2.sub-title {
+    font-size: 2.5em;
+    color: #000000; /* Dark black color */
+    margin-bottom: 40px; /* Space below h2 */
+}
+
+/* Flex container for the buttons */
+.photo-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 50px; /* Space between headings and buttons */
+}
+
+/* Button styling */
+.photo-button {
+    width: 250px;
+    height: 200px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Button images */
+.photo-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: opacity 0.3s;
+}
+
+/* Button label overlay */
+.photo-button span {
+    display: block;
+    padding: 15px;
+    background-color: rgba(0, 77, 64, 0.75); /* Dark teal */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* Hover effects */
+.photo-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.photo-button:hover img {
+    opacity: 0.8;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fertilizer Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='fertilizer_predict.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Enter Fertilizer Details for Prediction</h2>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <form action="{{ url_for('predict_fertilizer') }}" method="post">
+            <select name="crop_type" required>
+                <option value="" disabled selected>Select Crop Type</option>
+                <option>Maize</option>
+                <option>Sugarcane</option>
+                <option>Cotton</option>
+                <option>Tobacco</option>
+                <option>Paddy</option>
+                <option>Barley</option>
+                <option>Wheat</option>
+                <option>Millets</option>
+                <option>Oil seeds</option>
+                <option>Pulses</option>
+                <option>Ground Nuts</option>
+            </select>
+            <select name="soil_type" required>
+                <option value="" disabled selected>Select Soil Type</option>
+                <option>Sandy</option>
+                <option>Loamy</option>
+                <option>Black</option>
+                <option>Red</option>
+                <option>Clayey</option>
+            </select>
+            <input type="number" name="temperature" placeholder="Enter Temperature (10-45°C)" min="10" max="45" required>
+            <input type="number" name="humidity" placeholder="Enter Humidity (30-100%)" min="30" max="100" required>
+            <input type="number" name="moisture" placeholder="Enter Soil Moisture (0-100%)" min="0" max="100" required>
+            <input type="number" name="nitrogen" placeholder="Enter Nitrogen (0-500)" min="0" max="500" required>
+            <input type="number" name="potassium" placeholder="Enter Potassium (0-500)" min="0" max="500" required>
+            <input type="number" name="phosphorous" placeholder="Enter Phosphorous (0-500)" min="0" max="500" required>
+            <button type="submit">Predict Fertilizer</button>
+        </form>
+    </div>
+</body>
+</html>

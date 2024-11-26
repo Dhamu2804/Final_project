@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='crop_predict.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Feature Values for Prediction</h2>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <form action="{{ url_for('predict_crop') }}" method="post">
+            <label>Nitrogen (N):</label>
+            <input type="number" name="N" step="0.01" required placeholder="Enter the feature (0-200)" min="0" max="200">
+            
+            <label>Phosphorous (P):</label>
+            <input type="number" name="P" step="0.01" required placeholder="Enter the feature (0-200)" min="0" max="200">
+            
+            <label>Potassium (K):</label>
+            <input type="number" name="K" step="0.01" required placeholder="Enter the feature (0-200)" min="0" max="200">
+            
+            <label>Temperature:</label>
+            <input type="number" name="temperature" step="0.01" required placeholder="Enter the feature (-10-50)" min="-10" max="50">
+            
+            <label>Humidity:</label>
+            <input type="number" name="humidity" step="0.01" required placeholder="Enter the feature (0-100)" min="0" max="100">
+            
+            <label>pH Level:</label>
+            <input type="number" name="ph" step="0.01" required placeholder="Enter the feature (0-14)" min="0" max="14">
+            
+            <label>Rainfall:</label>
+            <input type="number" name="rainfall" step="0.01" required placeholder="Enter the feature (0-500)" min="0" max="500">
+            
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>

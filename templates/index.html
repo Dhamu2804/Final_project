@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Driven Solutions for Precision Farming</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <!-- Main content for the index page -->
+    <div class="content">
+        <h1 class="main-title">AI-Driven Solutions for Precision Farming</h1>
+        <h2 class="sub-title">Crop Selection, Fertilizer Optimization using Machine Learning Models</h2>
+
+        <!-- Flex container for buttons -->
+        <div class="photo-buttons">
+            <!-- Button for Crop Prediction -->
+            <a href="{{ url_for('predict_crop') }}" class="photo-button">
+                <img src="{{ url_for('static', filename='crop_button1.jpg') }}" alt="Crop Prediction" />
+                <span>Crop Prediction</span>
+            </a>
+
+            <!-- Button for Fertilizer Prediction -->
+            <a href="{{ url_for('predict_fertilizer') }}" class="photo-button">
+                <img src="{{ url_for('static', filename='fertilizer_button.jpg') }}" alt="Fertilizer Prediction" />
+                <span>Fertilizer Prediction</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
